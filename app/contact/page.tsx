@@ -1,6 +1,35 @@
+'use client';
+import AOS from 'aos';
+import { useEffect } from 'react';
+import 'aos/dist/aos.css'; 
+import { useState } from "react";
 export default function Contact() {
+      AOS.init();
+      useEffect(() => {
+           AOS.init({
+             // Global settings:
+             disable: false,
+             startEvent: 'DOMContentLoaded',
+             initClassName: 'aos-init',
+             animatedClassName: 'aos-animate',
+             useClassNames: false,
+             disableMutationObserver: false,
+             debounceDelay: 50,
+             throttleDelay: 99,
+             // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+             offset: 120,
+             delay: 0,
+             duration: 1000,
+             easing: 'ease',
+             once: false,
+             mirror: false,
+             anchorPlacement: 'top-bottom',
+           });
+         }, []);
+         
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#F6EBDA] via-white to-[#F4AE26] flex flex-col items-center justify-start">
+    <div className="min-h-screen bg-gradient-to-br from-[#F6EBDA] via-white to-[#F4AE26] flex flex-col items-center justify-start"
+    data-aos="fade-up">
       {/* Hero Section */}
       <div className="w-full relative h-[350px] md:h-[500px] flex items-center justify-center mb-12">
         <div

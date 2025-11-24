@@ -1,9 +1,12 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import React from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   let menuTimeout: NodeJS.Timeout | null = null;
   const [activeLink, setActiveLink] = useState("Home");
@@ -20,6 +23,21 @@ export default function Navbar() {
     setActiveLink(linkName);
     setIsMenuOpen(false); // Close mobile menu when link is clicked
   };
+
+  // Helper to map pathname to active link
+  const getActiveLink = () => {
+    if (pathname === "/") return "Home";
+    if (pathname.startsWith("/about-us")) return "About Us";
+    if (pathname.startsWith("/menu")) return "Menu";
+    if (pathname.startsWith("/gallery")) return "Gallery";
+    if (pathname.startsWith("/contact")) return "Contact";
+    return "";
+  };
+
+  // Sync activeLink with route
+  React.useEffect(() => {
+    setActiveLink(getActiveLink());
+  }, [pathname]);
 
   return (
     <div className="flex flex-row justify-between items-center  w-screen py-2 bg-[#F6EBDA] z-50 px-4">
@@ -64,6 +82,7 @@ export default function Navbar() {
             className={`cursor-pointer flex items-center transition-colors ${activeLink === "Menu" ? "text-[#FF902B]" : "hover:text-amber-600"}`}
             onClick={() => {
               setIsDesktopMenuDropdownOpen((open) => !open);
+              window.location.href = "/menu";
             }}
             type="button"
           >
@@ -109,7 +128,7 @@ export default function Navbar() {
       </button>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden fixed top-15 left-0 w-full bg-[#F6EBDA] shadow-lg z-[100] transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+  <div className={`md:hidden fixed top-15 left-0 w-full bg-[#F6EBDA] shadow-lg z-100 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
         <div className="flex flex-col p-4 space-y-4">
           <Link 
             href='/' 

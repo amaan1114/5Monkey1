@@ -23,7 +23,7 @@ export default function Menu() {
       // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
       offset: 120,
       delay: 0,
-      duration: 400,
+      duration: 1000,
       easing: 'ease',
       once: false,
       mirror: false,
@@ -37,8 +37,9 @@ export default function Menu() {
   // Drinks section rendering
   if (sectionType === "drinks") {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-[#F6EBDA] via-white to-[#F4AE26] flex flex-col items-center justify-start">
-        <div className="w-full relative h-[350px] md:h-[500px] flex items-center justify-center mb-12">
+      <div className="min-h-screen bg-gradient-to-br from-[#F6EBDA] via-white to-[#F4AE26] flex flex-col items-center justify-start"
+     >
+        <div className="w-full relative h-[350px] md:h-[500px] flex items-center justify-center mb-12"  >
           <div
             className="absolute inset-0 rounded-b-3xl flex flex-col items-center justify-center"
             style={{
@@ -153,7 +154,7 @@ export default function Menu() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#F6EBDA] via-white to-[#F4AE26] flex flex-col items-center justify-start">
       {/* Hero Section */}
-      <div className="w-full relative h-[350px] md:h-[500px] flex items-center justify-center mb-12">
+      <div className="w-full relative h-[350px] md:h-[500px] flex items-center justify-center mb-12" data-aos="fade-up">
         <div
           className="absolute inset-0 rounded-b-3xl flex flex-col items-center justify-center"
           style={{
