@@ -7,13 +7,13 @@ export default function Gallery() {
     const [selectedImage, setSelectedImage] = useState<number | null>(null);
     
     const images = [
-        { src: "/svg/g1.webp", alt: "Gallery Image 1" },
-        { src: "/svg/g2.webp", alt: "Gallery Image 2" },
-        { src: "/svg/g3.webp", alt: "Gallery Image 3" },
-        { src: "/svg/g4.webp", alt: "Gallery Image 4" },
-        { src: "/svg/g5.webp", alt: "Gallery Image 5" },
-        { src: "/svg/g6.webp", alt: "Gallery Image 6" },
-        { src: "/svg/g7.webp", alt: "Gallery Image 7" },
+        { src: "./svg/g1.webp", alt: "Gallery Image 1" },
+        { src: "./svg/g2.webp", alt: "Gallery Image 2" },
+        { src: "./svg/g3.webp", alt: "Gallery Image 3" },
+        { src: "./svg/g4.webp", alt: "Gallery Image 4" },
+        { src: "./svg/g5.webp", alt: "Gallery Image 5" },
+        { src: "./svg/g6.webp", alt: "Gallery Image 6" },
+        { src: "./svg/g7.webp", alt: "Gallery Image 7" },
     ];
 
     const openModal = (index: number) => {
