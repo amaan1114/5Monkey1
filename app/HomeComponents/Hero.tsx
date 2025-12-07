@@ -2,7 +2,7 @@ import Image from "next/image";
 export default function Hero(){
     return(
     <>
-    <div className="flex flex-col w-screen justify-between items-center content-center h-[80vh]"
+    <div className="flex flex-col w-screen justify-between items-center content-center"
     style={{
         backgroundImage: "url('/svg/homebg.svg')",
         backgroundSize: '[100%] [100%]',
