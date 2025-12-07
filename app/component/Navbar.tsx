@@ -47,7 +47,7 @@ export default function Navbar(){
     return(
     <>
     <div className="flex flex-row justify-between items-center w-screen py-4 md:py-6 lg:py-15 z-50 px-4 md:px-8 lg:px-15 relative">
-        <Image src="/svg/logo.svg" alt="logo"
+        <Image src="./svg/logo.svg" alt="logo"
         unoptimized
         width={120}
         height={40}
