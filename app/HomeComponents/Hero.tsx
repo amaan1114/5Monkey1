@@ -5,8 +5,7 @@ export default function Hero(){
     <div className="flex flex-col w-screen justify-between items-center content-center"
     style={{
         backgroundImage: "url('/svg/homebg.svg')",
-        backgroundSize: '[100%] [100%]',
-        backgroundPosition: 'contain',
+        backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
     }}>
         <div className="flex flex-col w-full items-center content-center mt-30 lg:mt-0">
